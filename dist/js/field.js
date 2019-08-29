@@ -515,23 +515,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [__WEBPACK_IMPORTED_MODULE_1_laravel_nova__["HandlesValidationErrors"], __WEBPACK_IMPORTED_MODULE_1_laravel_nova__["FormField"]],
+    mixins: [__WEBPACK_IMPORTED_MODULE_1_laravel_nova__["HandlesValidationErrors"], __WEBPACK_IMPORTED_MODULE_1_laravel_nova__["FormField"]],
 
-  components: { TimePicker: __WEBPACK_IMPORTED_MODULE_0__TimePicker___default.a },
+    components: { TimePicker: __WEBPACK_IMPORTED_MODULE_0__TimePicker___default.a },
 
-  computed: {
-    placeholder: function placeholder() {
-      return moment(new Date()).format("HH:ss");
-    },
-    twelveHourTime: function twelveHourTime() {
-      return this.field.twelveHourTime || false;
+    computed: {
+        placeholder: function placeholder() {
+            return moment(new Date()).format('HH:ss');
+        },
+        twelveHourTime: function twelveHourTime() {
+            return this.field.twelveHourTime || false;
+        }
     }
-  }
 });
 
 /***/ }),
@@ -596,7 +598,7 @@ var content = __webpack_require__(14);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(15)("05464087", content, false, {});
+var update = __webpack_require__(15)("60262c87", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -620,7 +622,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.\\!cursor-not-allowed[data-v-4c69ed4e] {\n    cursor: not-allowed !important;\n}\n", ""]);
+exports.push([module.i, "\n.\\!cursor-not-allowed[data-v-4c69ed4e] {\r\n    cursor: not-allowed !important;\n}\r\n", ""]);
 
 // exports
 
@@ -896,15 +898,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flatpickr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flatpickr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flatpickr_dist_themes_airbnb_css__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flatpickr_dist_themes_airbnb_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flatpickr_dist_themes_airbnb_css__);
-var _props;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: (_props = {
+    props: {
         field: {
             required: true
         },
@@ -917,14 +916,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         },
         placeholder: {
             type: String
+        },
+        twelveHourTime: {
+            type: Boolean,
+            default: true
         }
-    }, _defineProperty(_props, 'disabled', {
-        type: Boolean,
-        default: false
-    }), _defineProperty(_props, 'twelveHourTime', {
-        type: Boolean,
-        default: true
-    }), _props),
+    },
 
     data: function data() {
         return { flatpickr: null };
@@ -936,6 +933,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.$nextTick(function () {
             _this.flatpickr = __WEBPACK_IMPORTED_MODULE_0_flatpickr___default()(_this.$refs.timePicker, {
                 enableTime: true,
+                onChange: _this.onChange,
                 onClose: _this.onChange,
                 noCalendar: true,
                 dateFormat: "H:i",
@@ -14348,7 +14346,7 @@ var render = function() {
           ? _c(
               "div",
               { staticClass: "help-text error-text mt-2 text-danger" },
-              [_vm._v(_vm._s(_vm.firstError))]
+              [_vm._v("\n            " + _vm._s(_vm.firstError) + "\n        ")]
             )
           : _vm._e()
       ])

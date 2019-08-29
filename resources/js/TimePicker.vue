@@ -17,10 +17,6 @@ export default {
         placeholder: {
             type: String
         },
-        disabled: {
-            type: Boolean,
-            default: false,
-        },
         twelveHourTime: {
             type: Boolean,
             default: true,
@@ -33,6 +29,7 @@ export default {
         this.$nextTick(() => {
             this.flatpickr = flatpickr(this.$refs.timePicker, {
                 enableTime: true,
+                onChange: this.onChange,
                 onClose: this.onChange,
                 noCalendar: true,
                 dateFormat: "H:i",
@@ -44,7 +41,7 @@ export default {
 
     methods: {
         onChange(event) {
-            this.$emit('change', this.$refs.timePicker.value)
+          this.$emit('change', this.$refs.timePicker.value);
         },
     },
 }
